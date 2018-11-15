@@ -2,6 +2,10 @@
 
 VS Code extension to write journals conveniently.
 
+## Install
+
+- download *.vsix, and see the [docs](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix)
+
 ## Features
 
 - `Journal Today` create a YYMMDD.md file in user-defined directory and open the file, that's all.
