@@ -7,6 +7,11 @@
     "engines": {
         "vscode": "^1.28.0"
     },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tamuhey/journal_vscode_extension"
+    },
     "categories": [
         "Other"
     ],
