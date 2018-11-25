@@ -46,8 +46,16 @@ export function activate(context: vscode.ExtensionContext) {
             if (res) {
               e.edit(edit => {
                 // initial content of the journal
-                edit.insert(new vscode.Position(0, 0), "# note\n");
-                edit.insert(new vscode.Position(0, 1), "# work\n");
+                var date = new Date().toISOString();
+                // body 
+                let body=`---
+title: ${getNowYMD()}
+date: ${date}
+---
+# note
+`;
+                // initial content of the journal
+                edit.insert(new vscode.Position(0, 0), body);
               });
             }
           });
