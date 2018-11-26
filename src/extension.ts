@@ -53,6 +53,13 @@ title: ${getNowYMD()}
 date: ${date}
 ---
 # note
+
+# eval
+
+- point: 
+- bedtime: 
+- sleep: 
+- physical_condition: 
 `;
                 // initial content of the journal
                 edit.insert(new vscode.Position(0, 0), body);
