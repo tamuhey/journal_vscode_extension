@@ -16,14 +16,24 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:journal.today"
+    "onCommand:journal.today",
+    "onCommand:journal.yesterday",
+    "onCommand:journal.date_offset"
   ],
   "main": "./out/extension",
   "contributes": {
     "commands": [
       {
+        "command": "journal.yesterday",
+        "title": "Journal Yesterday"
+      },
+      {
         "command": "journal.today",
         "title": "Journal Today"
+      },
+      {
+        "command": "journal.date_offset",
+        "title": "Journal Date offset"
       }
     ],
     "configuration": [
