@@ -44,23 +44,12 @@ export function activate(context: vscode.ExtensionContext) {
         .then((doc: vscode.TextDocument) => {
           vscode.window.showTextDocument(doc, 1, false).then(e => {
             if (res) {
+              const user_body = config.get("body", "");
               e.edit(edit => {
                 // initial content of the journal
                 var date = new Date().toISOString();
-                // body 
-                let body=`---
-title: ${getNowYMD()}
-date: ${date}
----
-# note
-
-# eval
-
-- point: 
-- bedtime: 
-- sleep: 
-- physical_condition: 
-`;
+                // body
+                let body = `---\ntitle: ${getNowYMD()}\ndate: ${date}\n---\n`+user_body;
                 // initial content of the journal
                 edit.insert(new vscode.Position(0, 0), body);
               });

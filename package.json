@@ -1,56 +1,60 @@
 {
-    "name": "journal",
-    "displayName": "journal",
-    "description": "",
-    "version": "0.0.3",
-    "publisher": "tamuhey",
-    "engines": {
-        "vscode": "^1.28.0"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/tamuhey/journal_vscode_extension"
-    },
-    "categories": [
-        "Other"
+  "name": "journal",
+  "displayName": "journal",
+  "description": "",
+  "version": "0.0.4",
+  "publisher": "tamuhey",
+  "engines": {
+    "vscode": "^1.28.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamuhey/journal_vscode_extension"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:journal.today"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "journal.today",
+        "title": "Journal Today"
+      }
     ],
-    "activationEvents": [
-        "onCommand:journal.today"
-    ],
-    "main": "./out/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "journal.today",
-                "title": "Journal Today"
-            }
-        ],
-        "configuration": [
-            {
-                "type": "object",
-                "title": "config ",
-                "properties": {
-                    "journal.basepath": {
-                        "type": "string",
-                        "default": "/tmp/"
-                    }
-                }
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^8.10.25",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.22"
-    }
+    "configuration": [
+      {
+        "type": "object",
+        "title": "config ",
+        "properties": {
+          "journal.basepath": {
+            "type": "string",
+            "default": "/tmp/"
+          },
+          "journal.body": {
+            "type": "string",
+            "default": "- point: \n- bedtime: \n- physical_condition: \n- after_work: \n- comment: \n# Todo"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.10.25",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.22"
+  }
 }
